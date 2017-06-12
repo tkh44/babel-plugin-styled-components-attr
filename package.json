@@ -1,24 +1,15 @@
 {
   "name": "babel-plugin-styled-components-attr",
-  "version": "2.0.1",
+  "version": "0.0.1",
   "description": "CSS attr function in your styled components",
-  "jsnext:main": "dist/babel-plugin-styled-components-attr.es.js",
-  "module": "dist/babel-plugin-styled-components-attr.es.js",
-  "main": "dist/glam.js",
-  "umd:main": "dist/babel-plugin-styled-components-attr.umd.js",
+  "main": "src/index.js",
   "files": [
-    "src",
+    "src"
   ],
   "scripts": {
-    "build": "npm-run-all clean -p rollup -p minify:* -s size",
-    "clean": "rimraf dist",
     "test": "standard src test && jest --coverage",
     "test:watch": "jest --watch",
-    "rollup": "rollup -c",
-    "minify:cjs": "uglifyjs $npm_package_main -cm toplevel -o $npm_package_main -p relative --in-source-map ${npm_package_main}.map --source-map ${npm_package_main}.map",
-    "minify:umd": "uglifyjs $npm_package_umd_main -cm -o $npm_package_umd_main -p relative --in-source-map ${npm_package_umd_main}.map --source-map ${npm_package_umd_main}.map",
-    "size": "echo \"Gzipped Size: $(strip-json-comments --no-whitespace $npm_package_main | gzip-size)\"",
-    "release": "npm run test && npm run build && npm version patch && npm publish && git push --tags"
+    "release": "npm run test && npm version patch && npm publish && git push --tags"
   },
   "dependencies": {},
   "devDependencies": {
