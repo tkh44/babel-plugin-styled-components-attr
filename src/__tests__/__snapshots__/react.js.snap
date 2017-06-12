@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`react attr 1`] = `
+<h1
+  className="sc-bdVaJa bDgELt"
+  fontSize={48}
+/>
+`;
+
+exports[`react call expression 1`] = `
+<h1
+  className="legacy__class sc-bwzfXH jeojSs"
+>
+  hello world
+</h1>
+`;
+
+exports[`react function in expression 1`] = `
+<h1
+  className="legacy__class sc-bxivhb eVsQxe sc-htpNat cdpOJv"
+  scale={2}
+>
+  hello world
+</h1>
+`;

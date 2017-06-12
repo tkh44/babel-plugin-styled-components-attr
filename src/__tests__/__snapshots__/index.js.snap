@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`emotion/babel babel styled component all value types 1`] = `
+"styled('input')\`
+        margin: \${function getMargin(props) {
+        return props.margin + 'em';
+}};
+        margin: \${function getMargin(props) {
+        return props.margin + 'ex';
+}};
+        margin: \${function getMargin(props) {
+        return props.margin + 'px';
+}};
+        margin: \${function getMargin(props) {
+        return props.margin + 'rem';
+}};
+        margin: \${function getMargin(props) {
+        return props.margin + 'vw';
+}};
+        margin: \${function getMargin(props) {
+        return props.margin + 'vh';
+}};
+        margin: \${function getMargin(props) {
+        return props.margin + 'vmin';
+}};
+        margin: \${function getMargin(props) {
+        return props.margin + 'vmax';
+}};
+        margin: \${function getMargin(props) {
+        return props.margin + 'mm';
+}};
+        margin: \${function getMargin(props) {
+        return props.margin + 'cm';
+}};
+        margin: \${function getMargin(props) {
+        return props.margin + 'in';
+}};
+        margin: \${function getMargin(props) {
+        return props.margin + 'pt';
+}};
+        margin: \${function getMargin(props) {
+        return props.margin + 'pc';
+}};
+        margin: \${function getMargin(props) {
+        return props.margin + '%';
+}};
+      \`;"
+`;
+
+exports[`emotion/babel babel styled component basic 1`] = `
+"
+styled('input')\`
+         height: \${props => props.height};
+         margin: \${function getMargin(props) {
+         return props.margin;
+}};
+         padding: \${function getPadding(props) {
+         return props.padding ? props.padding : ('16' + 'em');
+}};
+         color: blue;
+        \`;"
+`;
+
+exports[`emotion/babel babel styled component css tag 1`] = `
+"css\`
+        margin: \${function getMargin(props) {
+        return props.margin ? props.margin : (\\"16\\" + \\"px\\");
+}};
+        padding: \${function getPadding(props) {
+        return props.padding ? props.padding : (\\"16\\" + \\"em\\");
+}};
+        font-size: attr(fontSize ch, 8);
+        width: \${function getWidth(props) {
+        return props.width ? props.width : (\\"95\\" + \\"%\\");
+}};
+        height: \${function getHeight(props) {
+        return props.height ? props.height : (\\"90\\" + \\"vw\\");
+}};
+        display: \${function getDisplay(props) {
+        return props.display ? props.display : (\\"flex\\" + \\"\\");
+}};
+      \`;"
+`;
+
+exports[`emotion/babel babel styled component empty 1`] = `
+"
+styled('input')\`\`;"
+`;
+
+exports[`emotion/babel babel styled component kitchen sink 1`] = `
+"styled('input')\`
+        margin: \${function getMargin(props) {
+        return props.margin ? props.margin : ('16' + 'px');
+}};
+        padding: \${function getPadding(props) {
+        return props.padding ? props.padding : ('16' + 'em');
+}};
+        font-size: attr(fontSize ch, 8);
+        width: \${function getWidth(props) {
+        return props.width ? props.width : ('95' + '%');
+}};
+        height: \${function getHeight(props) {
+        return props.height ? props.height : ('90' + 'vw');
+}};
+        display: \${function getDisplay(props) {
+        return props.display ? props.display : ('flex' + '');
+}};
+      \`;"
+`;
+
+exports[`emotion/babel babel styled component member expression 1`] = `
+"styled.input\`
+       margin: \${function getMargin(props) {
+       return props.margin;
+}};
+       color: #ffffff;
+       height: \${props => props.height * props.scale};
+       width: \${function getWidth(props) {
+       return props.width;
+}};
+       color: blue;
+       display: \${flex};
+      \`;"
+`;
+
+exports[`emotion/babel babel styled component something else 1`] = `
+"
+const a = \`color: attr(height);\`;"
+`;
+
+exports[`emotion/babel babel styled component with default value 1`] = `
+"styled('input')\`
+        margin: \${function getMargin(props) {
+        return props.margin ? props.margin : ('16' + '');
+}};
+      \`;"
+`;
+
+exports[`emotion/babel babel styled component with value type 1`] = `
+"styled('input')\`
+        margin: \${function getMargin(props) {
+        return props.margin + 'px';
+}};
+      \`;"
+`;
+
+exports[`emotion/babel babel styled component with value type 2`] = `
+"styled.input.attrs({ type: 'text' })\`
+        margin: \${function getMargin(props) {
+        return props.margin + 'px';
+}};
+      \`;"
+`;
+
+exports[`emotion/babel babel styled component with value type and default value 1`] = `
+"styled('input')\`
+        margin: \${function getMargin(props) {
+        return props.margin ? props.margin : ('16' + 'px');
+}};
+      \`;"
+`;
