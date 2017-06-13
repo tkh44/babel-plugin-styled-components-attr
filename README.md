@@ -9,7 +9,7 @@ use the CSS attr function in your styled-components code.
 [![Build Status](https://travis-ci.org/tkh44/babel-plugin-styled-components-attr.svg?branch=master)](https://travis-ci.org/tkh44/babel-plugin-styled-components-attr)
 [![codecov](https://codecov.io/gh/tkh44/babel-plugin-styled-components-attr/branch/master/graph/badge.svg)](https://codecov.io/gh/tkh44/babel-plugin-styled-components-attr)
 
-<img style="max-height: 200px;" src="https://user-images.githubusercontent.com/662750/27061725-7bfa4d92-4fa3-11e7-8e7b-cf40e1a5bd21.png"/>
+<img style="max-height: 200px;" width="320px" src="https://user-images.githubusercontent.com/662750/27061725-7bfa4d92-4fa3-11e7-8e7b-cf40e1a5bd21.png"/>
 
 ```jsx
 const Input = styled.input`
