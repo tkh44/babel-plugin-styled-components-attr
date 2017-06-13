@@ -2,7 +2,8 @@
 
 exports[`react attr 1`] = `
 <h1
-  className="sc-bdVaJa kdXUTj"
+  className="sc-bdVaJa cvWRMj"
+  color="#495057"
   fontSize={48}
 />
 `;
