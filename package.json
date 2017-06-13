@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-styled-components-attr",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "CSS attr function in your styled components",
   "main": "src/index.js",
   "files": [
