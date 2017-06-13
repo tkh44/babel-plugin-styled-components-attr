@@ -1,5 +1,6 @@
 /* eslint-disable jsx-quotes,no-useless-escape,no-template-curly-in-string */
 /* eslint-env jest */
+import 'jest-styled-components'
 import React from 'react'
 import renderer from 'react-test-renderer'
 import styled, { css } from 'styled-components'
@@ -24,7 +25,7 @@ describe('react', () => {
 
     const tree = renderer.create(<Title />).toJSON()
 
-    expect(tree).toMatchSnapshot()
+    expect(tree).toMatchStyledComponentsSnapshot()
   })
 
   test('call expression', () => {
@@ -48,7 +49,7 @@ describe('react', () => {
       )
       .toJSON()
 
-    expect(tree).toMatchSnapshot()
+    expect(tree).toMatchStyledComponentsSnapshot()
   })
 
   test('function in expression', () => {
@@ -68,6 +69,16 @@ describe('react', () => {
       )
       .toJSON()
 
-    expect(tree).toMatchSnapshot()
+    expect(tree).toMatchStyledComponentsSnapshot()
+  })
+
+  test('default value does not show when real value is 0', () => {
+    const H1 = styled('h1')`
+      height: attr(height px, 99);
+    `
+
+    const tree = renderer.create(<H1 height={0} />).toJSON()
+
+    expect(tree).toMatchStyledComponentsSnapshot()
   })
 })

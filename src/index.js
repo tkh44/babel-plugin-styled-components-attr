@@ -119,43 +119,48 @@ module.exports = function (babel) {
     return path.node
   }
 
+  const Visitor = {
+    TemplateLiteral (path) {
+      const parentPath = path.find(path => path.isTaggedTemplateExpression())
+      if (!parentPath) {
+        return
+      }
+      let parentTag = parentPath.node.tag
+
+      // grab correct tab is styled.input.attrs type is used
+      if (
+        t.isMemberExpression(parentTag.callee) &&
+        t.isMemberExpression(parentTag.callee.object) &&
+        parentTag.callee.object.object.name === 'styled'
+      ) {
+        parentTag = parentTag.callee.object
+      }
+
+      if (parentTag.name === 'css') {
+        // css`...`
+        path.replaceWith(findAndReplaceAttrs(path))
+      } else if (
+        // styled.h1`...`
+      t.isMemberExpression(parentTag) &&
+      parentTag.object.name === 'styled' &&
+      t.isTemplateLiteral(path.node)
+      ) {
+        path.replaceWith(findAndReplaceAttrs(path))
+      } else if (
+        // styled('h1')`...`
+      t.isCallExpression(parentPath.node.tag) &&
+      parentPath.node.tag.callee.name === 'styled' &&
+      t.isTemplateLiteral(path.node)
+      ) {
+        path.replaceWith(findAndReplaceAttrs(path))
+      }
+    }
+  }
+
   return {
-    name: 'babel-plugin-styled-attr',
     visitor: {
-      TemplateLiteral (path) {
-        const parentPath = path.find(path => path.isTaggedTemplateExpression())
-        if (!parentPath) {
-          return
-        }
-        let parentTag = parentPath.node.tag
-
-        // grab correct tab is styled.input.attrs type is used
-        if (
-          t.isMemberExpression(parentTag.callee) &&
-          t.isMemberExpression(parentTag.callee.object) &&
-          parentTag.callee.object.object.name === 'styled'
-        ) {
-          parentTag = parentTag.callee.object
-        }
-
-        if (parentTag.name === 'css') {
-          // css`...`
-          path.replaceWith(findAndReplaceAttrs(path))
-        } else if (
-          // styled.h1`...`
-          t.isMemberExpression(parentTag) &&
-          parentTag.object.name === 'styled' &&
-          t.isTemplateLiteral(path.node)
-        ) {
-          path.replaceWith(findAndReplaceAttrs(path))
-        } else if (
-          // styled('h1')`...`
-          t.isCallExpression(parentPath.node.tag) &&
-          parentPath.node.tag.callee.name === 'styled' &&
-          t.isTemplateLiteral(path.node)
-        ) {
-          path.replaceWith(findAndReplaceAttrs(path))
-        }
+      TaggedTemplateExpression (path) {
+        path.traverse(Visitor)
       }
     }
   }

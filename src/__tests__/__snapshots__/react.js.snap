@@ -1,29 +1,66 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`react attr 1`] = `
+.hKjquV {
+  font-size: 48;
+  margin: 4rem;
+  color: #495057;
+}
+
 <h1
-  className="sc-bdVaJa cvWRMj"
+  className="sc-bdVaJa hKjquV"
   color="#495057"
   fontSize={48}
 />
 `;
 
 exports[`react call expression 1`] = `
+.etaRTp {
+  color: #ffffff;
+  width: 48%;
+  margin: 16;
+}
+
+.jQCmMp {
+  font-size: ;
+  margin: 4rem;
+}
+
 <h1
-  className="legacy__class sc-htpNat imbxgS"
+  className="legacy__class sc-htpNat jQCmMp"
 >
   hello world
   <input
-    className="sc-bwzfXH fHBZwQ"
+    className="sc-bwzfXH etaRTp"
     color="#ffffff"
     width={48}
   />
 </h1>
 `;
 
-exports[`react function in expression 1`] = `
+exports[`react default value does not show when real value is 0 1`] = `
+.hmEnUa {
+  height: 99px;
+}
+
 <h1
-  className="legacy__class sc-ifAKCX gXhtwV sc-bxivhb jOHkaa"
+  className="sc-EHOje hmEnUa"
+  height={0}
+/>
+`;
+
+exports[`react function in expression 1`] = `
+.dFwslv {
+  height: 48;
+  font-size: 20px;
+}
+
+.gXhtwV {
+  font-size: 40;
+}
+
+<h1
+  className="legacy__class sc-ifAKCX gXhtwV sc-bxivhb dFwslv"
   height={48}
   scale={2}
 >

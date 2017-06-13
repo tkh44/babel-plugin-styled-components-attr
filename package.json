@@ -23,6 +23,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "jest": "^20.0.4",
     "jest-cli": "^20.0.4",
+    "jest-styled-components": "^3.0.0",
     "npm-run-all": "^4.0.2",
     "react": "^15.5.4",
     "react-addons-test-utils": "^15.5.1",
