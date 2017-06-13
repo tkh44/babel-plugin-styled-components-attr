@@ -7,7 +7,7 @@
     "src"
   ],
   "scripts": {
-    "test": "standard src test && jest --coverage",
+    "test": "standard src test && jest --coverage --no-cache",
     "test:watch": "jest --watch",
     "release": "npm run test && npm version patch && npm publish && git push --tags"
   },
