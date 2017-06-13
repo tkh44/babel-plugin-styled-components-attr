@@ -9,14 +9,14 @@ describe('react', () => {
     const baseText = css`color: attr(color, #a9e34b);`
 
     const H1 = styled.h1`
-      ${baseText}
       font-size: attr(fontSize);
       margin: attr(margin rem, 4);
+      ${baseText}
     `
 
     const Title = ({ title }) => {
       return (
-        <H1 fontSize={48}>
+        <H1 color="#495057" fontSize={48}>
           {title}
         </H1>
       )
