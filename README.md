@@ -1,13 +1,20 @@
 # babel-plugin-styled-components-attr
 
-## babel-plugin-styled-components-attr
+
+use the CSS attr function in your styled-components code.
+
+```jsx
+const Input = styled.input`
+  color: attr(color);
+  width: attr(width %);
+  margin: attr(margin px, 16);
+`
+```
+
 
 [![npm version](https://badge.fury.io/js/babel-plugin-styled-components-attr.svg)](https://badge.fury.io/js/babel-plugin-styled-components-attr)
 [![Build Status](https://travis-ci.org/tkh44/babel-plugin-styled-components-attr.svg?branch=master)](https://travis-ci.org/tkh44/babel-plugin-styled-components-attr)
 [![codecov](https://codecov.io/gh/tkh44/babel-plugin-styled-components-attr/branch/master/graph/badge.svg)](https://codecov.io/gh/tkh44/babel-plugin-styled-components-attr)
-
-
--   [Install](#install)
 
 ## Install
 
