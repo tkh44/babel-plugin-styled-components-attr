@@ -6,12 +6,15 @@ import styled, { css } from 'styled-components'
 
 describe('react', () => {
   test('attr', () => {
+    const baseText = css`color: attr(color, #a9e34b);`
+
     const H1 = styled.h1`
+      ${baseText}
       font-size: attr(fontSize);
       margin: attr(margin rem, 4);
     `
 
-    const Title = ({title}) => {
+    const Title = ({ title }) => {
       return (
         <H1 fontSize={48}>
           {title}
@@ -19,16 +22,18 @@ describe('react', () => {
       )
     }
 
-    const tree = renderer
-      .create(
-        <Title/>
-      )
-      .toJSON()
+    const tree = renderer.create(<Title />).toJSON()
 
     expect(tree).toMatchSnapshot()
   })
 
   test('call expression', () => {
+    const Input = styled.input`
+      color: attr(color);
+      width: attr(width %);
+      margin: attr(margin px, 16);
+    `
+
     const H1 = styled('h1')`
       font-size: attr(fontSize);
       margin: attr(margin rem, 4);
@@ -38,6 +43,7 @@ describe('react', () => {
       .create(
         <H1 className={'legacy__class'}>
           hello world
+          <Input color="#ffffff" width={48} margin={16} />
         </H1>
       )
       .toJSON()
@@ -48,14 +54,15 @@ describe('react', () => {
   test('function in expression', () => {
     const fontSize = 20
     const H1 = styled('h1')`
+      height: attr(height);
       font-size: ${fontSize}px;
     `
 
-    const H2 = styled(H1)`font-size: ${({scale}) => fontSize * scale}`
+    const H2 = styled(H1)`font-size: ${({ scale }) => fontSize * scale}`
 
     const tree = renderer
       .create(
-        <H2 scale={2} className={'legacy__class'}>
+        <H2 scale={2} height={48} className={'legacy__class'}>
           hello world
         </H2>
       )

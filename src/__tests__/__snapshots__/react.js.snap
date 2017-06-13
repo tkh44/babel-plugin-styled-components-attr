@@ -2,22 +2,28 @@
 
 exports[`react attr 1`] = `
 <h1
-  className="sc-bdVaJa bDgELt"
+  className="sc-bdVaJa kdXUTj"
   fontSize={48}
 />
 `;
 
 exports[`react call expression 1`] = `
 <h1
-  className="legacy__class sc-bwzfXH jeojSs"
+  className="legacy__class sc-htpNat imbxgS"
 >
   hello world
+  <input
+    className="sc-bwzfXH fHBZwQ"
+    color="#ffffff"
+    width={48}
+  />
 </h1>
 `;
 
 exports[`react function in expression 1`] = `
 <h1
-  className="legacy__class sc-bxivhb eVsQxe sc-htpNat cdpOJv"
+  className="legacy__class sc-ifAKCX gXhtwV sc-bxivhb jOHkaa"
+  height={48}
   scale={2}
 >
   hello world
