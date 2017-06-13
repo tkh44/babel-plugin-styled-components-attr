@@ -55,7 +55,7 @@ styled('input')\`
          return props.margin;
 }};
          padding: \${function getPadding(props) {
-         return props.padding ? props.padding : ('16' + 'em');
+         return undefined === props.padding || null === props.padding ? ('16' + 'em') : props.padding;
 }};
          color: blue;
         \`;"
@@ -64,20 +64,20 @@ styled('input')\`
 exports[`emotion/babel babel styled component css tag 1`] = `
 "css\`
         margin: \${function getMargin(props) {
-        return props.margin ? props.margin : (\\"16\\" + \\"px\\");
+        return undefined === props.margin || null === props.margin ? (\\"16\\" + \\"px\\") : props.margin;
 }};
         padding: \${function getPadding(props) {
-        return props.padding ? props.padding : (\\"16\\" + \\"em\\");
+        return undefined === props.padding || null === props.padding ? (\\"16\\" + \\"em\\") : props.padding;
 }};
         font-size: attr(fontSize ch, 8);
         width: \${function getWidth(props) {
-        return props.width ? props.width : (\\"95\\" + \\"%\\");
+        return undefined === props.width || null === props.width ? (\\"95\\" + \\"%\\") : props.width;
 }};
         height: \${function getHeight(props) {
-        return props.height ? props.height : (\\"90\\" + \\"vw\\");
+        return undefined === props.height || null === props.height ? (\\"90\\" + \\"vw\\") : props.height;
 }};
         display: \${function getDisplay(props) {
-        return props.display ? props.display : (\\"flex\\" + \\"\\");
+        return undefined === props.display || null === props.display ? (\\"flex\\" + \\"\\") : props.display;
 }};
       \`;"
 `;
@@ -90,20 +90,20 @@ styled('input')\`\`;"
 exports[`emotion/babel babel styled component kitchen sink 1`] = `
 "styled('input')\`
         margin: \${function getMargin(props) {
-        return props.margin ? props.margin : ('16' + 'px');
+        return undefined === props.margin || null === props.margin ? ('16' + 'px') : props.margin;
 }};
         padding: \${function getPadding(props) {
-        return props.padding ? props.padding : ('16' + 'em');
+        return undefined === props.padding || null === props.padding ? ('16' + 'em') : props.padding;
 }};
         font-size: attr(fontSize ch, 8);
         width: \${function getWidth(props) {
-        return props.width ? props.width : ('95' + '%');
+        return undefined === props.width || null === props.width ? ('95' + '%') : props.width;
 }};
         height: \${function getHeight(props) {
-        return props.height ? props.height : ('90' + 'vw');
+        return undefined === props.height || null === props.height ? ('90' + 'vw') : props.height;
 }};
         display: \${function getDisplay(props) {
-        return props.display ? props.display : ('flex' + '');
+        return undefined === props.display || null === props.display ? ('flex' + '') : props.display;
 }};
       \`;"
 `;
@@ -131,7 +131,7 @@ const a = \`color: attr(height);\`;"
 exports[`emotion/babel babel styled component with default value 1`] = `
 "styled('input')\`
         margin: \${function getMargin(props) {
-        return props.margin ? props.margin : ('16' + '');
+        return undefined === props.margin || null === props.margin ? ('16' + '') : props.margin;
 }};
       \`;"
 `;
@@ -155,7 +155,7 @@ exports[`emotion/babel babel styled component with value type 2`] = `
 exports[`emotion/babel babel styled component with value type and default value 1`] = `
 "styled('input')\`
         margin: \${function getMargin(props) {
-        return props.margin ? props.margin : ('16' + 'px');
+        return undefined === props.margin || null === props.margin ? ('16' + 'px') : props.margin;
 }};
       \`;"
 `;

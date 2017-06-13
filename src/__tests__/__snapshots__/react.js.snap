@@ -39,12 +39,12 @@ exports[`react call expression 1`] = `
 `;
 
 exports[`react default value does not show when real value is 0 1`] = `
-.hmEnUa {
-  height: 99px;
+.dpjTwL {
+  height: 0;
 }
 
 <h1
-  className="sc-EHOje hmEnUa"
+  className="sc-EHOje dpjTwL"
   height={0}
 />
 `;

@@ -74,15 +74,27 @@ module.exports = function (babel) {
 
           if (defaultValue) {
             returnValue = t.conditionalExpression(
-              createMemberExpression(),
-              createMemberExpression(),
+              t.logicalExpression(
+                '||',
+                t.binaryExpression(
+                  '===',
+                  t.identifier('undefined'),
+                  createMemberExpression()
+                ),
+                t.binaryExpression(
+                  '===',
+                  t.nullLiteral(),
+                  createMemberExpression()
+                )
+              ),
               t.parenthesizedExpression(
                 t.binaryExpression(
                   '+',
                   t.stringLiteral(defaultValue),
                   t.stringLiteral(valueType || '')
                 )
-              )
+              ),
+              createMemberExpression()
             )
           }
 
@@ -141,16 +153,16 @@ module.exports = function (babel) {
         path.replaceWith(findAndReplaceAttrs(path))
       } else if (
         // styled.h1`...`
-      t.isMemberExpression(parentTag) &&
-      parentTag.object.name === 'styled' &&
-      t.isTemplateLiteral(path.node)
+        t.isMemberExpression(parentTag) &&
+        parentTag.object.name === 'styled' &&
+        t.isTemplateLiteral(path.node)
       ) {
         path.replaceWith(findAndReplaceAttrs(path))
       } else if (
         // styled('h1')`...`
-      t.isCallExpression(parentPath.node.tag) &&
-      parentPath.node.tag.callee.name === 'styled' &&
-      t.isTemplateLiteral(path.node)
+        t.isCallExpression(parentPath.node.tag) &&
+        parentPath.node.tag.callee.name === 'styled' &&
+        t.isTemplateLiteral(path.node)
       ) {
         path.replaceWith(findAndReplaceAttrs(path))
       }
